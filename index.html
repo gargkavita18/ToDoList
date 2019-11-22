@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TODOAPP</title>
+    <style>
+    body{
+      background-image:url('pen.jpg');
+      background-size:cover;
+    }
+
+    button#i1
+    {
+      margin-left:30px;
+      margin-right:30px;
+      margin-top:10px;
+      height:30px;
+      width:80px;
+      background-color:	lightsalmon;
+    }
+
+      button#i1:hover{
+        height:35px;
+        width:90px;
+      }
+
+    #heading
+    {
+      font-size:50px;
+      font-family:cooper black;
+    }
+
+    #heading:hover{
+      text-transform:uppercase;
+    }
+
+    #s{
+      color:olive;
+    }
+
+    #text-box
+    {
+      height:30px;
+      width:300px;
+    }
+
+    #text-box:hover{
+      color:black;
+      width:320px;
+      height:35px;
+      background-color:linen;
+    }
+
+    #btn{
+      height:35px;
+      width:80px;
+      background-color:	goldenrod;
+    }
+
+      #btn:hover{
+        height:40px;
+        width:90px;
+        background-color:burlywood;
+      }
+
+    #h22
+    {
+      color:darkslategrey;
+    }
+
+    #h22:hover{
+      font-family:cooper black;
+      text-transform:uppercase;
+    }
+    </style>
+  </head>
+  <body>
+    <center>
+    <h1 id="heading">T<span id="s">o</span>D<span id="s">o</span> List</h1>
+    <h3 id="h22">Add your TO-DO works just by entering the work on the text bar <br>and click on add button.</h3>
+    <hr width="400px">
+<input type="text" id="text-box" placeholder="what do you want to do" style="color:maroon; font-size:15px;">
+<input type="button" id="btn" value="ADD">
+<hr width="400px">
+<br>
+<br>
+<ul id="list" style="list-style-type:none;padding:10px;">
+  </ul>
+</center>
+  <script>
+    var input1=document.getElementById('text-box');
+    var btn=document.getElementById('btn');
+    btn.addEventListener('click', tryClick);
+    function tryClick()
+    {
+      var uu=document.getElementById('list');
+      const textt=input1.value;
+      var text1=textt.toUpperCase();
+        if(text1!='')
+        {
+      var ll=document.createElement('li');
+      ll.textContent=text1;
+      var BUT=document.createElement('button');
+      BUT.innerHTML='delete';
+      BUT.id='i1';
+      ll.appendChild(BUT);
+        uu.appendChild(ll);
+      input1.value="";
+    }
+    }
+    </script>
+  </body>
+</html>
